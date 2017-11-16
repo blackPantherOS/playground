@@ -1,0 +1,21 @@
+--- window1.py.orig	2017-11-16 21:36:38.708788980 +0100
++++ window1.py	2017-11-16 21:29:36.010117537 +0100
+@@ -1,6 +1,6 @@
+ # -*- coding: utf-8 -*-
+ 
+-# Form implementation generated from reading ui file 'window1.ui'
++# Form implementation generated from reading ui file 'modules/window1.ui'
+ #
+ # Created by: PyQt5 UI code generator 5.6
+ #
+@@ -126,8 +126,8 @@
+         self.horizontalLayout.setContentsMargins(5, 5, 5, 5)
+         self.horizontalLayout.setObjectName("horizontalLayout")
+         self.horizontalLayout_4.addLayout(self.horizontalLayout)
+-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+-        self.horizontalLayout_4.addItem(spacerItem1)
++        self.spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
++        self.horizontalLayout_4.addItem(self.spacerItem1)
+         self.toolButton = QtWidgets.QToolButton(PyDialog)
+         self.toolButton.setLayoutDirection(QtCore.Qt.LeftToRight)
+         icon = QtGui.QIcon.fromTheme("configure")

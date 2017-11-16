@@ -86,6 +86,7 @@ def call_parser():
     # The pydialog's own arguments (do not use them in the kdialog!)
 
     parser.add_argument("--stayontop", help=_("The window stays on top"), action='store_true')
+    parser.add_argument("--showsettings", help=_("Show the settings button"), action='store_true')
 
     parser.add_argument("--antisegfault", action='store_true')
 
@@ -297,6 +298,11 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
         self.button_values = {}
         self.create_elements()
         self.word_wrap()
+        if arguments.showsettings and not arguments.forkedprogressbar:
+            self.toolButton.clicked.connect(self.settings_button_clicked)
+        else:
+            self.toolButton.hide()
+            self.spacerItem1.changeSize(0, 0)
 
     def save_dontask(self, value):
         if arguments.dontagain and dontagain_available() and value != 2:
@@ -690,6 +696,10 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
     
     def cancel_button_clicked(self):
         print(return_keyword+str(self.button_values["cancel_button"])+">")
+        self.done(0)
+    
+    def settings_button_clicked(self):
+        print(return_keyword+"100>")
         self.done(0)
     
     def reject(self):
