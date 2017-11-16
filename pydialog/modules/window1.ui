@@ -66,7 +66,7 @@
    <property name="sizeConstraint">
     <enum>QLayout::SetMinimumSize</enum>
    </property>
-   <item row="0" column="0">
+   <item row="1" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QGroupBox" name="groupBox">
@@ -199,6 +199,22 @@
           </item>
           <item>
            <widget class="QComboBox" name="comboBox"/>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton">
+            <property name="toolTip">
+             <string>Custom settings..</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string extracomment="Custom settings">Configure</string>
+            </property>
+            <property name="icon">
+             <iconset theme="configure"/>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
