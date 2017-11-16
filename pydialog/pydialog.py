@@ -239,7 +239,10 @@ if not arguments.antisegfault:
         pos = result.find(return_keyword) + len(return_keyword)
         if pos != len(return_keyword)-1:
             pos2 = result[pos:].find(">")+pos
-            exit_result = int(result[pos:pos2])
+            try:
+                exit_result = int(result[pos:pos2])
+            except:
+                exit_result = 200
             output = result[:pos-len(return_keyword)]+result[pos2+2:]
         else:
             exit_result = 0
@@ -320,8 +323,8 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
         self.create_buttons()
         self.set_button_labels()
 
-        noab = len(list(filter(lambda x: self.active_buttons[x], self.active_buttons)))
-        self.reject_value = noab - 1
+#        noab = len(list(filter(lambda x: self.active_buttons[x], self.active_buttons)))
+#        self.reject_value = noab - 1
 
         
     def hide_unused_elements(self):
@@ -509,7 +512,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             scrollArea = QScrollArea()
             #scrollArea.setHorizontalScrollBar(hscrollbar)
             #scrollArea.setVerticalScrollBar(vscrollbar)
-            #scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+            scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
             #scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
             self.set_scrollarea_height(scrollArea)
             scrollArea.setWidget(scrollWidget)
@@ -613,8 +616,8 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
                 self.horizontalLayout.addWidget(self.buttons[button_id])
                 if button_id == "details_button":
                     self.buttons["details_button"].clicked.connect(self.details_button_clicked)
-                elif button_id == "cancel_button":
-                    self.buttons[button_id].clicked.connect(self.reject)
+#                elif button_id == "cancel_button":
+#                    self.buttons[button_id].clicked.connect(self.reject)
                 else:
                     self.button_values[button_id] = i
                     exec("self.buttons[button_id].clicked.connect(self."+button_id+"_clicked)")
@@ -685,9 +688,14 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
         print(return_keyword+str(self.button_values["save_button"])+">")
         self.done(0)
     
+    def cancel_button_clicked(self):
+        print(return_keyword+str(self.button_values["cancel_button"])+">")
+        self.done(0)
+    
     def reject(self):
-        value = str(self.reject_value)
-        print(return_keyword+value+">")
+#        value = str(self.reject_value)
+#        print(return_keyword+value+">")
+        print(return_keyword+">")
         self.done(0)
 
     def enable_buttons (self, button_list):
