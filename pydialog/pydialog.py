@@ -512,7 +512,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             scrollArea = QScrollArea()
             #scrollArea.setHorizontalScrollBar(hscrollbar)
             #scrollArea.setVerticalScrollBar(vscrollbar)
-            scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+            #scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
             #scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
             self.set_scrollarea_height(scrollArea)
             scrollArea.setWidget(scrollWidget)

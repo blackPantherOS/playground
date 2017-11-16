@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'window1.ui'
+# Form implementation generated from reading ui file 'modules/window1.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
@@ -124,7 +124,18 @@ class Ui_PyDialog(object):
         self.horizontalLayout.setContentsMargins(5, 5, 5, 5)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout.addLayout(self.horizontalLayout)
-        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout, 1, 0, 1, 1)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.toolButton = QtWidgets.QToolButton(PyDialog)
+        self.toolButton.setLayoutDirection(QtCore.Qt.LeftToRight)
+        icon = QtGui.QIcon.fromTheme("configure")
+        self.toolButton.setIcon(icon)
+        self.toolButton.setObjectName("toolButton")
+        self.verticalLayout_3.addWidget(self.toolButton)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem1)
+        self.gridLayout.addLayout(self.verticalLayout_3, 1, 2, 1, 1)
 
         self.retranslateUi(PyDialog)
         QtCore.QMetaObject.connectSlotsByName(PyDialog)
@@ -134,4 +145,6 @@ class Ui_PyDialog(object):
         PyDialog.setWindowTitle(_translate("PyDialog", "PyDialog"))
         self.label.setText(_translate("PyDialog", "PyDialog the KDialog alternative - blackPanther Europe  - www.blackpantheros.eu"))
         self.label_2.setText(_translate("PyDialog", "TextLabel2"))
+        self.toolButton.setToolTip(_translate("PyDialog", "Custom settings.."))
+        self.toolButton.setText(_translate("PyDialog", "Configure"))
 
