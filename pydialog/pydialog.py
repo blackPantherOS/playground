@@ -96,8 +96,7 @@ def call_parser():
         for argument in arguments.__dict__:
             if argument != "antisegfault":
                 exec("arguments."+argument+"=None")
-        arguments.error = [_("PyDialog - %s: %s") % (error_type, name)]
-
+        arguments.error = [("PyDialog - %s: %s") % (error_type, name)]
 
     unfinished = ["passivepopup", "geticon", "printwinid", "calendar", "attach"]
     
@@ -508,7 +507,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             
     def create_scrollarea(self, scrollLayout):
             from PyQt5.QtWidgets import QHBoxLayout, QWidget, QScrollArea
-            from PyQt5.QtCore import Qt
+            #from PyQt5.QtCore import Qt
 
             scrollWidget = QWidget()
             scrollAreaLayout = QHBoxLayout()                
