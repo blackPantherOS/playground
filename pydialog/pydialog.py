@@ -186,7 +186,7 @@ arguments.getopenurl or arguments.getsaveurl or arguments.getcolor:
 def dontagain_available():
     if arguments.yesno or arguments.yesnocancel or arguments.warningyesno:
         return True
-    elif arguments.warningcountinuecancel or arguments.warningyesnocancel or arguments.msgbox:
+    elif arguments.warningcontinuecancel or arguments.warningyesnocancel or arguments.msgbox:
         return True
     else:
         return False
