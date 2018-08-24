@@ -197,6 +197,7 @@ if arguments.dontagain and dontagain_available():
     config = configparser.ConfigParser()
     file, config_key = arguments.dontagain[0].split(':')
     config_file = os.getenv("HOME") + "/.config/" + file
+    print ("Don't again LockFile: "+config_file)
     config.read(config_file)
     if config.has_option(config_section, config_key):
         sys.exit(config.getint(config_section, config_key))
@@ -668,7 +669,9 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             self.get_combo_text()
         elif arguments.textinputbox:
             print(self.textedit.toPlainText())
+        value = str(self.button_values["ok_button"])
         print(return_keyword+str(self.button_values["ok_button"])+">")
+        self.save_dontask(value)
         self.done(0)
     
     def yes_button_clicked(self):
