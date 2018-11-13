@@ -77,6 +77,7 @@ def call_parser():
     parser.add_argument("--dontagain", metavar=_("<file:entry>"), help=_("Config file and option name for saving the 'do-not-show/ask-again' state"), nargs=1)
     parser.add_argument("--print-winid", help=_("Outputs the winId of each dialog"), dest="printwinid")
     parser.add_argument("--attach", metavar=_("<winid>"), help=_("Makes the dialog transient for an X app specified by winid"), nargs=1)
+    parser.add_argument("--geometry", metavar=_("[width][height][x][y]"), help=_("Set window geometry"), nargs=1)
 
      # TODO: Waiting for GUI
 
@@ -377,6 +378,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             if arguments.sorry:
                 self.label.setText(arguments.sorry)
             elif arguments.error:
+                print("itt", arguments.error)
                 self.label.setText(arguments.error)
             elif arguments.msgbox:
                 self.label.setText(arguments.msgbox)
@@ -734,6 +736,13 @@ if __name__ == '__main__' and not (arguments.progressbar or arguments.forkedprog
     app = QApplication(sys.argv) # NOTE: Be careful, the QApplication can remove elements from the sys.argv! Call the parse_args before it if you want to use them.
 
     form = MainWindow()
+    if arguments.geometry:
+        if '+' in arguments.geometry[0]:
+            w,h,x,y = (int(e) for e in arguments.geometry[0].replace("x", "+").split("+"))
+            form.move(x,y)
+        else:
+            w,h = (int(e) for e in arguments.geometry[0].split("x"))
+        form.resize(w,h)
     form.show()
     app.exec_()
 
