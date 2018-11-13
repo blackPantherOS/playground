@@ -1,0 +1,382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-13 22:18+0100\n"
+"PO-Revision-Date: 2018-11-13 22:26+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: Barcza Károly <kbarcza@blackpanther.hu>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: hu_HU\n"
+
+#: pydialog_old.py:24 pydialog.py:29 pydialog_alt.py:183 pydialog-old.py:27
+msgid "Dialog title"
+msgstr "Az ablak felirata"
+
+#: pydialog_old.py:24 pydialog_old.py:28 pydialog_old.py:29 pydialog_old.py:30
+#: pydialog_old.py:31 pydialog_old.py:35 pydialog_old.py:37 pydialog_old.py:43
+#: pydialog_old.py:44 pydialog_old.py:45 pydialog_old.py:46 pydialog_old.py:47
+#: pydialog_old.py:51 pydialog_old.py:72 pydialog_old.py:77 pydialog.py:29
+#: pydialog.py:33 pydialog.py:34 pydialog.py:35 pydialog.py:36 pydialog.py:40
+#: pydialog.py:42 pydialog.py:50 pydialog.py:51 pydialog.py:52 pydialog.py:53
+#: pydialog.py:54 pydialog.py:58 pydialog.py:74 pydialog.py:88
+#: pydialog_alt.py:183 pydialog_alt.py:187 pydialog_alt.py:188
+#: pydialog_alt.py:189 pydialog_alt.py:190 pydialog_alt.py:193
+#: pydialog_alt.py:194 pydialog_alt.py:195 pydialog_alt.py:196
+#: pydialog_alt.py:197 pydialog_alt.py:201 pydialog-old.py:27
+#: pydialog-old.py:31 pydialog-old.py:32 pydialog-old.py:33 pydialog-old.py:34
+#: pydialog-old.py:38 pydialog-old.py:40 pydialog-old.py:48 pydialog-old.py:49
+#: pydialog-old.py:50 pydialog-old.py:51 pydialog-old.py:52 pydialog-old.py:56
+#: pydialog-old.py:77 pydialog-old.py:81
+msgid "<text>"
+msgstr "<szöveg>"
+
+#: pydialog_old.py:25 pydialog.py:30 pydialog_alt.py:184 pydialog-old.py:28
+msgid "Question message box with yes/no/cancel buttons"
+msgstr "Kérdező üzenetablak Igen/Nem/Mégsem nyomógombokkal"
+
+#: pydialog_old.py:26 pydialog.py:31 pydialog_alt.py:185 pydialog-old.py:29
+msgid "Question message box with yes/no buttons"
+msgstr "Kérdező üzenetablak Igen/Nem nyomógombokkal"
+
+#: pydialog_old.py:28 pydialog.py:33 pydialog_alt.py:187 pydialog-old.py:31
+msgid "The label of the yes-button"
+msgstr "Az Igen gomb felirata"
+
+#: pydialog_old.py:29 pydialog.py:34 pydialog_alt.py:188 pydialog-old.py:32
+msgid "The label of the no-button"
+msgstr "A Nem gomb felirata"
+
+#: pydialog_old.py:30 pydialog.py:35 pydialog_alt.py:189 pydialog-old.py:33
+msgid "The label of the cancel-button"
+msgstr "A Mégse gomb felirata"
+
+#: pydialog_old.py:31 pydialog.py:36 pydialog_alt.py:190 pydialog-old.py:34
+msgid "Use text as Continue button label"
+msgstr "Szöveg használata a Folytatás gomb címkéjeként"
+
+#: pydialog_old.py:32 pydialog.py:37 pydialog_alt.py:206 pydialog-old.py:35
+msgid "Use icon as the application icon."
+msgstr ""
+
+#: pydialog_old.py:32 pydialog.py:37 pydialog_alt.py:206 pydialog-old.py:35
+msgid "<path>"
+msgstr ""
+
+#: pydialog_old.py:33 pydialog.py:38 pydialog_alt.py:210 pydialog-old.py:36
+msgid "Progress bar dialog, returns a D-Bus reference for communication"
+msgstr "Folyamatjelző ablak, D-Bus-hivatkozást ad vissza a kommunikációhoz"
+
+#: pydialog_old.py:33 pydialog_old.py:34 pydialog.py:38 pydialog.py:39
+#: pydialog_alt.py:210 pydialog-old.py:36 pydialog-old.py:37
+msgid "<text> [totalsteps]"
+msgstr ""
+
+#: pydialog_old.py:36 pydialog.py:41 pydialog-old.py:39
+msgid "<text> <init>"
+msgstr ""
+
+#: pydialog_old.py:36 pydialog.py:41 pydialog-old.py:39
+msgid "Input Box dialog"
+msgstr "Adatbeviteli ablak"
+
+#: pydialog_old.py:37 pydialog.py:42 pydialog-old.py:40
+msgid "Password dialog"
+msgstr "Jelszó párbeszédablak"
+
+#: pydialog_old.py:38 pydialog_old.py:39 pydialog.py:43 pydialog.py:44
+#: pydialog-old.py:41 pydialog-old.py:42
+msgid "<text> [tag item status] ..."
+msgstr ""
+
+#: pydialog_old.py:38 pydialog.py:43 pydialog-old.py:41
+msgid "Check List dialog"
+msgstr "Jelölőnégyzetes ablak"
+
+#: pydialog_old.py:39 pydialog.py:44 pydialog-old.py:42
+msgid "Radio List dialog"
+msgstr "Választógombos ablak"
+
+#: pydialog_old.py:40 pydialog.py:45 pydialog-old.py:43
+msgid "<text> [tag item] [tag item] ..."
+msgstr ""
+
+#: pydialog_old.py:40 pydialog.py:45 pydialog-old.py:43
+msgid "Menu dialog"
+msgstr "Menüablak"
+
+#: pydialog_old.py:43 pydialog.py:50 pydialog_alt.py:193 pydialog-old.py:48
+msgid "Sorry message box"
+msgstr "„Elnézést” üzenetablak"
+
+#: pydialog_old.py:44 pydialog.py:51 pydialog_alt.py:194 pydialog-old.py:49
+msgid "Warning message box with yes/no buttons"
+msgstr "Figyelmeztető ablak Igen/Nem gombokkal"
+
+#: pydialog_old.py:45 pydialog.py:52 pydialog_alt.py:195 pydialog-old.py:50
+msgid "Warning message box with yes/no/cancel buttons"
+msgstr "Figyelmeztető ablak Igen/Nem/Mégsem gombokkal"
+
+#: pydialog_old.py:46 pydialog.py:53 pydialog_alt.py:196 pydialog-old.py:51
+msgid "'Error' message box"
+msgstr "„Hiba” üzenetablak"
+
+#: pydialog_old.py:47 pydialog.py:54 pydialog_alt.py:197 pydialog-old.py:52
+msgid "Message Box dialog"
+msgstr "Üzenetablak-párbeszédablak"
+
+#: pydialog_old.py:50 pydialog.py:57 pydialog_alt.py:200 pydialog-old.py:55
+msgid "Sorry message box with expendable Details field"
+msgstr ""
+
+#: pydialog_old.py:50 pydialog_old.py:52 pydialog.py:57 pydialog.py:59
+#: pydialog_alt.py:200 pydialog_alt.py:202 pydialog-old.py:55
+#: pydialog-old.py:57
+msgid "<text> <details>"
+msgstr ""
+
+#: pydialog_old.py:51 pydialog.py:58 pydialog_alt.py:201 pydialog-old.py:56
+msgid "Warning message box with continue/cancel buttons"
+msgstr "Figyelmeztető ablak Folytatás/Mégsem gombokkal"
+
+#: pydialog_old.py:52 pydialog.py:59 pydialog_alt.py:202 pydialog-old.py:57
+msgid "'Error' message box with expandable Details field"
+msgstr "„Hiba” üzenetablak kinyitható Részletek mezővel"
+
+#: pydialog_old.py:55 pydialog.py:62 pydialog-old.py:60
+msgid "<text> [minvalue] [maxvalue] [step]"
+msgstr ""
+
+#: pydialog_old.py:55 pydialog.py:62 pydialog-old.py:60
+msgid "Slider dialog box, returns selected value"
+msgstr "Csúszka párbeszédablak, a kijelölt értékkel tér vissza"
+
+#: pydialog_old.py:58 pydialog.py:71 pydialog-old.py:63
+msgid "<text> item [item] [item] ..."
+msgstr ""
+
+#: pydialog_old.py:58 pydialog.py:71 pydialog-old.py:63
+msgid "ComboBox dialog"
+msgstr "Kombinált listás ablak"
+
+#: pydialog_old.py:60 pydialog.py:72 pydialog-old.py:65
+msgid "<text> <init> [width] [height]"
+msgstr ""
+
+#: pydialog_old.py:60 pydialog.py:72 pydialog-old.py:65
+msgid "Text Input Box dialog"
+msgstr "Szövegbeviteli ablak"
+
+#: pydialog_old.py:61 pydialog.py:80 pydialog-old.py:66
+msgid "<text> <timeout>"
+msgstr ""
+
+#: pydialog_old.py:61 pydialog.py:80 pydialog-old.py:66
+msgid "Passive Popup"
+msgstr "Passzív felbukkanó ablak"
+
+#: pydialog_old.py:65 pydialog_old.py:66 pydialog_old.py:68 pydialog_old.py:69
+#: pydialog.py:64 pydialog.py:65 pydialog.py:67 pydialog.py:68
+#: pydialog-old.py:70 pydialog-old.py:71 pydialog-old.py:73 pydialog-old.py:74
+msgid "[startDir] [filter]"
+msgstr ""
+
+#: pydialog_old.py:65 pydialog.py:64 pydialog-old.py:70
+msgid "File dialog to open an existing file"
+msgstr "Fájlmegnyitási párbeszédablak"
+
+#: pydialog_old.py:66 pydialog.py:65 pydialog-old.py:71
+msgid "File dialog to save a file"
+msgstr "Fájlmentési párbeszédablak"
+
+#: pydialog_old.py:67 pydialog.py:66 pydialog-old.py:72
+msgid "[startDir]"
+msgstr ""
+
+#: pydialog_old.py:67 pydialog.py:66 pydialog-old.py:72
+msgid "File dialog to select an existing directory"
+msgstr "Párbeszédablak egy már létező könyvtár kiválasztásához"
+
+#: pydialog_old.py:68 pydialog.py:67 pydialog-old.py:73
+msgid "File dialog to open an existing URL"
+msgstr "Párbeszédablak egy létező URL megnyitásához"
+
+#: pydialog_old.py:69 pydialog.py:68 pydialog-old.py:74
+msgid "File dialog to save a URL"
+msgstr "Párbeszédablak egy URL mentéséhez"
+
+#: pydialog_old.py:70 pydialog.py:89 pydialog-old.py:75
+msgid "[group] [context]"
+msgstr ""
+
+#: pydialog_old.py:70 pydialog.py:89 pydialog-old.py:75
+msgid "Icon chooser dialog"
+msgstr "Ikonválasztó párbeszédablak"
+
+#: pydialog_old.py:71 pydialog.py:69 pydialog-old.py:76
+msgid "Color dialog to select a color"
+msgstr "Párbeszédablak szín kiválasztásához"
+
+#: pydialog_old.py:72 pydialog.py:74 pydialog-old.py:77
+msgid "Default entry to use for combobox, menu and color"
+msgstr "Alapértelmezett bejegyzés kombinált listáknál, menüknél és színeknél"
+
+#: pydialog_old.py:73 pydialog.py:73 pydialog-old.py:78
+msgid ""
+"Allows the --getopenurl and --getopenfilename options to return multiple "
+"files"
+msgstr ""
+"Lehetővé teszi, hogy a --getopenurl és --getopenfilename opciókkal több "
+"fájlnevet lehessen visszaadni"
+
+#: pydialog_old.py:74 pydialog.py:47 pydialog-old.py:45
+msgid ""
+"Return list items on separate lines (for checklist option and file open with "
+"--multiple)"
+msgstr ""
+"A listaelemek visszaadása több sorban történjen (jelölőnégyzeteknél és --"
+"multiple opcióval való fájlmegnyitáskor)"
+
+#: pydialog_old.py:75 pydialog.py:83 pydialog-old.py:79
+msgid "Outputs the winId of each dialog"
+msgstr "Kiírja mindegyik párbeszédablak azonosítóját"
+
+#: pydialog_old.py:76 pydialog.py:82 pydialog-old.py:80
+msgid "<file:entry>"
+msgstr "<fájl:bejegyzés>"
+
+#: pydialog_old.py:76 pydialog.py:82 pydialog-old.py:80
+msgid ""
+"Config file and option name for saving the 'do-not-show/ask-again' state"
+msgstr ""
+
+#: pydialog_old.py:77 pydialog.py:88 pydialog-old.py:81
+msgid "Calendar dialog box, returns selected date"
+msgstr "Naptár párbeszédablak, a kijelölt dátummal tér vissza"
+
+#: pydialog_old.py:78 pydialog.py:84 pydialog-old.py:82
+msgid "<winid>"
+msgstr ""
+
+#: pydialog_old.py:78 pydialog.py:84 pydialog-old.py:82
+msgid "Makes the dialog transient for an X app specified by winid"
+msgstr ""
+"Tranzienssé teszi a párbeszédablakot egy adott azonosítójú X alkalmazásnak"
+
+#: pydialog_old.py:79 pydialog.py:70 pydialog-old.py:83
+msgid "<file> [width] [height]"
+msgstr ""
+
+#: pydialog_old.py:79 pydialog.py:70 pydialog-old.py:83
+msgid "Text Box dialog"
+msgstr "Szöveges üzenetablak"
+
+#: pydialog_old.py:85 pydialog.py:104 pydialog-old.py:92
+msgid "Missing arguments"
+msgstr "Hiányzó argumentumok"
+
+#: pydialog_old.py:89 pydialog-old.py:96
+#, python-format
+msgid "PyDialog - %s: %s"
+msgstr "PyDialog - %s: %s"
+
+#: pydialog_old.py:99 pydialog.py:114 pydialog-old.py:106
+msgid "This option is under development"
+msgstr "Ez az opció még fejlesztés alatt van"
+
+#: pydialog_old.py:142 pydialog.py:248 pydialog-old.py:149
+msgid "Undefined error"
+msgstr "Meghatározatlan hiba"
+
+#: pydialog_old.py:179 pydialog.py:298 pydialog_alt.py:68 pydialog-old.py:191
+msgid "Details"
+msgstr "Részletes"
+
+#: pydialog_old.py:180 pydialog.py:299 pydialog_alt.py:69 pydialog-old.py:192
+msgid "Ok"
+msgstr "Ok"
+
+#: pydialog_old.py:181 pydialog.py:300 pydialog_alt.py:70 pydialog-old.py:193
+msgid "Yes"
+msgstr "Engedélyezve"
+
+#: pydialog_old.py:182 pydialog.py:301 pydialog_alt.py:71 pydialog-old.py:194
+msgid "No"
+msgstr "Nem"
+
+#: pydialog_old.py:183 pydialog.py:302 pydialog_alt.py:72 pydialog-old.py:195
+msgid "Continue"
+msgstr "Folytatás"
+
+#: pydialog_old.py:184 pydialog.py:303 pydialog-old.py:196
+msgid "Save"
+msgstr "Mentés"
+
+#: pydialog_old.py:185 pydialog.py:304 pydialog_alt.py:73 pydialog-old.py:197
+msgid "Cancel"
+msgstr "Megszakít"
+
+#: pydialog_old.py:297 pydialog.py:454 pydialog-old.py:310
+msgid "Password:"
+msgstr "Jelszó:"
+
+#: pydialog.py:63 pydialog-old.py:85
+msgid "<primary tab name> <secondary tab name> ..."
+msgstr ""
+
+#: pydialog.py:63 pydialog-old.py:85
+msgid "Open a new tab"
+msgstr "Új lap"
+
+#: pydialog.py:75
+msgid "[width][height][x][y]"
+msgstr ""
+
+#: pydialog.py:75
+msgid "Set window geometry"
+msgstr "Ablakméret (geometria) megadása"
+
+#: pydialog.py:76
+msgid "About us :)"
+msgstr "Rólunk :)"
+
+#: pydialog.py:77
+msgid "Print pydialog version"
+msgstr ""
+
+#: pydialog.py:93 pydialog-old.py:86
+msgid "The window stays on top"
+msgstr ""
+
+#: pydialog.py:94
+msgid "Show the settings button"
+msgstr ""
+
+#: pydialog.py:122
+msgid "pydialog"
+msgstr "pydialog"
+
+#: pydialog.py:130
+msgid "All Files (*)"
+msgstr "Minden fájl(*.*)"
+
+#: pydialog.py:288
+msgid "Don't show or ask this again."
+msgstr "Ne kérdezzen vagy jelenjen meg újra."
+
+#: pydialog_alt.py:120
+msgid "There is no extra argument!"
+msgstr ""
+
+#: pydialog_alt.py:236
+msgid "These depends from the used options"
+msgstr ""
