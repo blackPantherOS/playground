@@ -11,6 +11,8 @@
 #*          The maintainer of the Pydialog: Miklos Horvath * hmiki[]blackpantheros.eu                    *
 #*************************************************************************************(c)2002-2017********
 
+VERSION = "0.9.4"
+
 import sys, time
 import gettext
 
@@ -70,6 +72,8 @@ def call_parser():
     parser.add_argument("--textinputbox", metavar=_("<text> <init> [width] [height]"), help=_("Text Input Box dialog"), nargs='+')
     parser.add_argument("--multiple", help=_("Allows the --getopenurl and --getopenfilename options to return multiple files"), action='store_true')
     parser.add_argument("--default", metavar=_("<text>"), help=_("Default entry to use for combobox, menu and color"), nargs='?')
+    parser.add_argument("--geometry", metavar=_("[width][height][x][y]"), help=_("Set window geometry"), nargs=1)
+    parser.add_argument("--version", help=_("Get pydialog version"), action='store_true')
 
     # TODO: Unfinished options below
     parser.add_argument("--passivepopup", metavar=_("<text> <timeout>"), help=_("Passive Popup"), nargs='+')
@@ -77,7 +81,6 @@ def call_parser():
     parser.add_argument("--dontagain", metavar=_("<file:entry>"), help=_("Config file and option name for saving the 'do-not-show/ask-again' state"), nargs=1)
     parser.add_argument("--print-winid", help=_("Outputs the winId of each dialog"), dest="printwinid")
     parser.add_argument("--attach", metavar=_("<winid>"), help=_("Makes the dialog transient for an X app specified by winid"), nargs=1)
-    parser.add_argument("--geometry", metavar=_("[width][height][x][y]"), help=_("Set window geometry"), nargs=1)
 
      # TODO: Waiting for GUI
 
@@ -373,7 +376,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             else:
                 self.label.setText(arguments.warningyesnocancel)
 
-        elif arguments.sorry or arguments.error or arguments.msgbox or arguments.textbox:
+        elif arguments.sorry or arguments.error or arguments.msgbox or arguments.textbox or arguments.version:
             self.enable_buttons(["ok_button"])
             if arguments.sorry:
                 self.label.setText(arguments.sorry)
@@ -397,6 +400,8 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
                 file = open(url, "r")
                 self.textbrowser.setText(file.read())
                 file.close()
+            elif arguments.version:
+                self.label.setText("Pydialog v{}".format(VERSION))
 
         elif arguments.detailedsorry or arguments.detailederror:
             self.enable_buttons(["details_button", "ok_button"])
@@ -584,8 +589,11 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             if arguments.radiolist:
                 radiobutton = QRadioButton(arguments.__dict__[name][i+1])
                 buttongroup_results[radiobutton] = arguments.__dict__[name][i]
-                if arguments.__dict__[name][i+2].lower() in ["true", "on"]:
-                    radiobutton.setChecked(True)
+                try:
+                    if arguments.__dict__[name][i+2].lower() in ["true", "on"]:
+                        radiobutton.setChecked(True)
+                except:
+                    break
                 i += 3
             else:
                 radiobutton = QRadioButton(arguments.__dict__[name][i+1])
