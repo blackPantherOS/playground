@@ -73,7 +73,8 @@ def call_parser():
     parser.add_argument("--multiple", help=_("Allows the --getopenurl and --getopenfilename options to return multiple files"), action='store_true')
     parser.add_argument("--default", metavar=_("<text>"), help=_("Default entry to use for combobox, menu and color"), nargs='?')
     parser.add_argument("--geometry", metavar=_("[width][height][x][y]"), help=_("Set window geometry"), nargs=1)
-    parser.add_argument("--version", help=_("Get pydialog version"), action='store_true')
+    parser.add_argument("--about", help=_("About us :)"), action='store_true')
+    parser.add_argument("--version", help=_("Print pydialog version"), action='store_true')
 
     # TODO: Unfinished options below
     parser.add_argument("--passivepopup", metavar=_("<text> <timeout>"), help=_("Passive Popup"), nargs='+')
@@ -95,6 +96,10 @@ def call_parser():
     parser.add_argument("--antisegfault", action='store_true')
 
     arguments = parser.parse_args()
+    
+    if arguments.version:
+        print(VERSION)
+        sys.exit(0)
 
     def argument_error(name="", error_type=_("Missing arguments")):
         for argument in arguments.__dict__:
@@ -376,7 +381,7 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             else:
                 self.label.setText(arguments.warningyesnocancel)
 
-        elif arguments.sorry or arguments.error or arguments.msgbox or arguments.textbox or arguments.version:
+        elif arguments.sorry or arguments.error or arguments.msgbox or arguments.textbox or arguments.about:
             self.enable_buttons(["ok_button"])
             if arguments.sorry:
                 self.label.setText(arguments.sorry)
@@ -400,8 +405,12 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
                 file = open(url, "r")
                 self.textbrowser.setText(file.read())
                 file.close()
-            elif arguments.version:
-                self.label.setText("Pydialog v{}".format(VERSION))
+            elif arguments.about:
+                self.label.setText("""
+                <strong>Pydialog v{}</strong><br><br>
+                Authors: <br><center><a href='mailto:hmiki@blackpantheros.eu'>Miklos Horvath</a></center>
+                <center><a href='mailto:info@blackpantheros.eu'>Charles Barcza</a></center><br>
+                <center><a href='http://blackpantheros.eu'>blackPanther Europe</a></center>""".format(VERSION))
 
         elif arguments.detailedsorry or arguments.detailederror:
             self.enable_buttons(["details_button", "ok_button"])
@@ -893,5 +902,3 @@ if __name__ == '__main__' and arguments.forkedprogressbar:
         bus.registerObject('/ProgressDialog', server)
         bus.registerService(arguments.dbusname[0])
     app.exec_()
-
-
