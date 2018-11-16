@@ -36,8 +36,8 @@ def call_parser():
     parser.add_argument("--continue-label", help=_("Use text as Continue button label"), dest="continuelabel", metavar=_("<text>"))
     parser.add_argument("--icon", help=_("Use icon as the application icon."), dest="icon", metavar=_("<path>"))
     parser.add_argument("--progressbar", help=_("Progress bar dialog, returns a D-Bus reference for communication"), nargs="+", metavar=_("<text> [totalsteps]"))
-    parser.add_argument("--forkedprogressbar", help=_(""), nargs="+", metavar=_("<text> [totalsteps]"))
-    parser.add_argument("--dbusname", help=_(""), nargs="+", metavar=_("<text>"))
+    parser.add_argument("--forkedprogressbar", help=_("Forked ProgressBar"), nargs="+", metavar=_("<text> [totalsteps]"))
+    parser.add_argument("--dbusname", help=_("DBUS name"), nargs="+", metavar=_("<text>"))
     parser.add_argument("--inputbox", metavar=_("<text> <init>"), help=_("Input Box dialog"), nargs='+')
     parser.add_argument("--password", metavar=_("<text>"), help=_("Password dialog"), nargs=1)
     parser.add_argument("--checklist", metavar=_("<text> [tag item status] ..."), help=_("Check List dialog"), nargs='+')
@@ -82,6 +82,9 @@ def call_parser():
     parser.add_argument("--dontagain", metavar=_("<file:entry>"), help=_("Config file and option name for saving the 'do-not-show/ask-again' state"), nargs=1)
     parser.add_argument("--print-winid", help=_("Outputs the winId of each dialog"), dest="printwinid")
     parser.add_argument("--attach", metavar=_("<winid>"), help=_("Makes the dialog transient for an X app specified by winid"), nargs=1)
+
+    # Set as default
+    parser.add_argument("--setdefault", metavar=_("<filename:entry>"), help=_("Set as default value the last selected item from a radiolist  saving the 'set-as-default/item' state"), nargs=1)
 
      # TODO: Waiting for GUI
 
@@ -211,6 +214,23 @@ if arguments.dontagain and dontagain_available():
     if config.has_option(config_section, config_key):
         sys.exit(config.getint(config_section, config_key))
 
+def setdefault_available():
+    if arguments.radiolist:
+        return True
+    else:
+        return False
+
+if arguments.setdefault and setdefault_available():
+    import configparser, os
+    config_section = "SetAsDefault"
+    config = configparser.ConfigParser()
+    file, config_key = arguments.setdefault[0].split(':')
+    config_file = os.getenv("HOME") + "/.config/" + file
+    print ("Set Default LockFile: "+config_file)
+    config.read(config_file)
+    if config.has_option(config_section, config_key):
+        sys.exit(config.getint(config_section, config_key))
+
 # DO NOT REMOVE! IT IS A SOLUTION TO A PYQT5 BUG (SEGFAULT)
 if not arguments.antisegfault:
     import subprocess
@@ -287,6 +307,11 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
             from PyQt5.QtWidgets import QCheckBox
             self.dontagain_checkBox = QCheckBox(_("Don't show or ask this again."), self)
             self.verticalLayout.addWidget(self.dontagain_checkBox)
+
+        if arguments.setdefault:
+            from PyQt5.QtWidgets import QCheckBox
+            self.dontagain_checkBox = QCheckBox(_("The selected set as default value."), self)
+            self.verticalLayout.addWidget(self.dontagain_checkBox)
         
         if arguments.stayontop:
             from PyQt5.QtCore import Qt
@@ -316,6 +341,16 @@ class MainWindow(QDialog, window1.Ui_PyDialog):
     def save_dontask(self, value):
         if arguments.dontagain and dontagain_available() and value != 2:
             if self.dontagain_checkBox.isChecked():
+                import configparser
+                config = configparser.ConfigParser()
+                config[config_section] = {}
+                config[config_section][config_key] = value
+                with open(config_file, 'w') as file:
+                    config.write(file)
+
+    def save_default(self, value):
+        if arguments.setdefault and setdefault_setdefault() and value != 2:
+            if self.setdefault_checkBox.isChecked():
                 import configparser
                 config = configparser.ConfigParser()
                 config[config_section] = {}
